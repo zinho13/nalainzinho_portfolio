@@ -1,3 +1,4 @@
+import { Menu } from "lucide-react";
 import { Button } from "../components/Button";
 
 const naLinks = [
@@ -17,7 +18,7 @@ export const Navbar = () => {
                 </a>
 
                 {/* Desktop Nav */}
-                <div className="flex items-center gap-1">
+                <div className="hidden md:flex items-center gap-1">
                     <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
                         {naLinks.map((link, key) => (
                             <a 
@@ -32,10 +33,32 @@ export const Navbar = () => {
                 </div>
 
                 {/* CTA Button */}
-                <div>
+                <div className="hidden md:block">
                     <Button size="sm">Contact Me</Button>
                 </div>
+
+                {/* Mobile Menu Button */}
+                <button className="md:hidden p-2 text-foreground">
+                    <Menu size={24}/>
+                </button>
             </nav>
+
+            {/* Mobile Mneu */}
+            <div className="md:hidden glass-strong">
+                <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+                    {naLinks.map((link, key) => (
+                        <a 
+                            href={link.href} 
+                            key={key} 
+                            className="text-lg text-muted-foregroun hover:text-foreground py-2"
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+
+                    <Button size="sm">Contact Me</Button>
+                </div>
+            </div>
         </header>
     );
 }

@@ -1,3 +1,6 @@
+import { ArrowRight, Download } from "lucide-react";
+import { Button } from "../components/Button";
+import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 export const Hero = () => {
     return (
@@ -58,6 +61,15 @@ export const Hero = () => {
                                 Java Spring Boot. I build scalable, performant web application
                                 that users love.
                             </p>
+                        </div>
+
+                        {/* CTAs */}
+                        <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+                            <Button size="lg">
+                                Contact Me <ArrowRight className="w-5 h-5" />
+                            </Button>
+                            {/* Animated SVG Border */}
+                            <AnimatedBorderButton />
                         </div>
                     </div>
 

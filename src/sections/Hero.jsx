@@ -44,7 +44,7 @@ export const Hero = () => {
 
                         {/* Headline */}
                         <div className="space-y-4">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
                                 Crafting <span className="text-primary glow-text">digital</span>
                                 <br />
                                 experinces with
@@ -53,7 +53,7 @@ export const Hero = () => {
                                     precision.
                                 </span>
                             </h1>
-                            <p className="text-lg text-muted-foreground max-w-lg animate-fade-in">
+                            <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                                 Hi, I'm Alain Zinho - a software engineer specializing in 
                                 Java Spring Boot. I build scalable, performant web application
                                 that users love.

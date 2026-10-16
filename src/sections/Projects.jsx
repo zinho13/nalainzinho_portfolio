@@ -4,7 +4,7 @@ const projects = [
         title: "Fintech Dashboard",
         description:
         "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
-        image: "./project1.png",
+        image: "/projects/project1.png",
         tags: ["React", "Typescript", "NodeJs"],
         link: "#",
         github: "#"
@@ -52,6 +52,27 @@ export const Projects = () => {
             <p className="text-muted-froreground animate-fade-in animation-delay-200">
                 A selection of my recent work, from complex web application to innovative tools that solve real-world problems.
             </p>
+        </div>
+
+        {/* Projects grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project, idx) => (
+                <div 
+                    key={idx}
+                    className="group glassrounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+                    style={{animationDelay: `${(idx + 1) * 100}ms`}}
+                >
+                {/* Image */}
+                    <div className="relative overflow-hidden aspect-video">
+                        <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-900 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
+                    </div>
+                </div>
+            ))}
         </div>
       </div>
     </section>

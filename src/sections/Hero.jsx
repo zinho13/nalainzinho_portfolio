@@ -90,7 +90,10 @@ export const Hero = () => {
                                 Contact Me <ArrowRight className="w-5 h-5" />
                             </Button>
                             {/* Animated SVG Border */}
-                            <AnimatedBorderButton />
+                            <AnimatedBorderButton>
+                                <Download className="w-5 h-5" /> 
+                                Download CV
+                            </AnimatedBorderButton>
                         </div>
 
                         {/* Social links */}

@@ -18,7 +18,7 @@ export const AnimatedBorderButton = ({children}) => {
                 style={{ overflow: "visible" }}
             >
                 <path
-                d="M 30,1 A 29,29 0 0 0 1,30 L 1,30 A 29,29 0 0 0 30,59 L 170,59 A"
+                d="M 30,1 A 29,29 0 0 0 1,30 L 1,30 A 29,29 0 0 0 30,59 L 170,59"
                 fill="none"
                 stroke="var(--color-primary)"
                 strokeWidth="2"

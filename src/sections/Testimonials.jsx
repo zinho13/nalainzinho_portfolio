@@ -102,6 +102,7 @@ export const Testimonials = () => {
                   <div className="flex gap-2">
                     {testimonials.map((_, idx) => (
                       <button 
+                        key={idx}
                         onClick={() => setActiveIdx(idx)}
                         className={`w-2 h-2 transition-all duration-300 rounded-full ${
                           (idx === activeIdx) 

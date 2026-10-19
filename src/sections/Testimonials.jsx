@@ -1,4 +1,5 @@
-import { ChevronLeft, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -33,6 +34,16 @@ const testimonials = [
 
 
 export const Testimonials = () => {
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const next = () => {
+    setActiveIdx((prev) => (prev + 1) % testimonials.length);
+  }
+
+  const previous = () => {
+    setActiveIdx((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }
+
   return (
     <section id="testimonials" className="py-32 relative overflow-hidden">
       <div
@@ -66,18 +77,47 @@ export const Testimonials = () => {
                     <Quote className="w-6 h-6  text-primary-foreground" />
                 </div>
 
-                <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">"{testimonials[0].quote}"</blockquote>
+                <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">"{testimonials[activeIdx].quote}"</blockquote>
                 <div className="flex items-center gap-4">
                     <img 
-                        src={testimonials[0].avatar} 
-                        alt={testimonials[0].author} 
+                        src={testimonials[activeIdx].avatar} 
+                        alt={testimonials[activeIdx].author} 
                         className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
                     />
                     <div className="">
-                        <div className="font-semibold">{testimonials[0].author}</div>
-                        <div className="text-sm text-muted-foreground">{testimonials[0].role}</div>
+                        <div className="font-semibold">{testimonials[activeIdx].author}</div>
+                        <div className="text-sm text-muted-foreground">{testimonials[activeIdx].role}</div>
                     </div>
                 </div>
+                </div>
+
+                {/* Testmonials Navigation */}
+                <div className="flex items-center justify-center gap-4 mt-8">
+                  <button 
+                    onClick={previous}
+                    className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all">
+                    <ChevronLeft />
+                  </button>
+
+                  <div className="flex gap-2">
+                    {testimonials.map((_, idx) => (
+                      <button 
+                        onClick={() => setActiveIdx(idx)}
+                        className={`w-2 h-2 transition-all duration-300 rounded-full ${
+                          (idx === activeIdx) 
+                          ? "w-8 bg-primary" 
+                          : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                        }`} 
+                      />
+                    ))}
+                  </div>
+
+                  <button 
+                    onClick={next}
+                    className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+                  >
+                    <ChevronRight />
+                  </button>
                 </div>
             </div>
         </div>

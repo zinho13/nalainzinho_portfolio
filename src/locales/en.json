@@ -1,0 +1,19 @@
+
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experiences",
+    "contact": "Contact me",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "role": "Full Stack Web Developer",
+    "description": "I design and develop modern, high-performance, and scalable web applications.",
+    "viewProjects": "View my projects",
+    "contactMe": "Contact me"
+  }
+}
+

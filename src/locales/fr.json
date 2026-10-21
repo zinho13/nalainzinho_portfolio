@@ -8,11 +8,19 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu"
   },
-  "hero": {
-    "greeting": "Bonjour, je suis",
-    "role": "Développeur web full stack",
-    "description": "Je conçois et développe des applications web modernes, performantes et évolutives.",
-    "viewProjects": "Voir mes projets",
-    "contactMe": "Me contacter"
+    "hero": {
+    "badge": "Développeur Fullstack | Java & JavaScript",
+    "headline1": "Je crée des",
+    "headlineHighlight": "expériences",
+    "headline2": "numériques avec",
+    "headline3": "précision.",
+    "description": "Bonjour, je suis Alain Zinho, Développeur fullstack Java/JavaScript. Je conçois et développe des applications web modernes, performantes et évolutives.",
+    "contactMe": "Me contacter",
+    "downloadCV": "Télécharger mon CV",
+    "followMe": "Suivez-moi :",
+    "availability": "Disponible pour de nouvelles opportunités",
+    "experience": "ans d'expérience",
+    "technologies": "Technologies que j'utilise",
+    "scroll": "Défiler"
   }
 }

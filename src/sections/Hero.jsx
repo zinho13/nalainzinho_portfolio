@@ -1,6 +1,9 @@
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
+import { useState } from "react";
 import { Button } from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { ContactModal } from "../components/ContactModal";
+import { useTranslation } from "react-i18next";
 
 const skills = [
     "Java",
@@ -24,6 +27,9 @@ const skills = [
 ];
 
 export const Hero = () => {
+    const { t } = useTranslation();
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
     return (
         <section
             className="relative min-h-screen flex items-center"
@@ -35,7 +41,7 @@ export const Hero = () => {
                     alt="hero image" 
                     className="w-full h-full object-cover opacity-40"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-backgroud"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background"></div>
             </div>
 
             {/* Green Dots */}
@@ -63,43 +69,41 @@ export const Hero = () => {
                         <div className="animate-fade-in">
                             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                                    Software Engineer - Java Specialist
+                                    {t("hero.badge")}
                             </span>
                         </div>
 
                         {/* Headline */}
                         <div className="space-y-4">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                                Crafting <span className="text-primary glow-text">digital</span>
+                                {t("hero.headline1")}{" "} <span className="text-primary glow-text">{t("hero.headlineHighlight")}</span>
                                 <br />
-                                experinces with
+                                {t("hero.headline2")}
                                 <br />
                                 <span className="font-serif italic font-normal text-white">
-                                    precision.
+                                    {t("hero.headline3")}
                                 </span>
                             </h1>
                             <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                                Hi, I'm Alain Zinho - a software engineer specializing in 
-                                Java Spring Boot. I build scalable, performant web application
-                                that users love.
+                                {t("hero.description")}
                             </p>
                         </div>
 
                         {/* CTAs */}
                         <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
                             <Button size="lg">
-                                Contact Me <ArrowRight className="w-5 h-5" />
+                                {t("hero.contactMe")} <ArrowRight className="w-5 h-5" />
                             </Button>
                             {/* Animated SVG Border */}
                             <AnimatedBorderButton>
                                 <Download className="w-5 h-5" /> 
-                                Download CV
+                                {t("hero.downloadCV")}
                             </AnimatedBorderButton>
                         </div>
 
                         {/* Social links */}
                         <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-                            <span className="text-sm text-muted-foreground ">Follow me: </span>
+                            <span className="text-sm text-muted-foreground ">{t("hero.followMe")} </span>
                             {[
                                 {
                                     name: "GitHub",
@@ -144,7 +148,7 @@ export const Hero = () => {
                     {/* Right Column - Profile Image */}
                     <div className="relative animate-fade-in animation-delay-300">
                         {/* Profile Image */}
-                        <div className="relative mx-w-md mx-auto">
+                        <div className="relative max-w-md max-auto">
                             <div 
                                 className="absolute inset-0 rounded-3xl bg-gradient-to-br 
                                     from-primary/30 via-transparent to-primary/10 blur-2xl 
@@ -161,14 +165,14 @@ export const Hero = () => {
                                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                                     <div className="flex items-center gap-3">
                                         <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                                        <span className="text-sm font-medium">Avaible for work</span>
+                                        <span className="text-sm font-medium">{t("hero.availability")}</span>
                                     </div>
                                 </div>
 
                                 {/* Stats Badge */}
                                 <div className="absolute -top-4 -left-4 rounded-xl px-4 py-3 animate-float animation-delay-500">
                                     <div className="text-2xl font-bold text-primary">5+</div>
-                                    <div className="text-xs text-muted-foreground">Years Exp.</div>
+                                    <div className="text-xs text-muted-foreground">{t("hero.experience")}</div>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +181,7 @@ export const Hero = () => {
 
                 {/* Skills Section */}
                 <div className="mt-20 animate-fade-in animation-delay-600">
-                    <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I work with</p>
+                    <p className="text-sm text-muted-foreground mb-6 text-center">{t("hero.technologies")}</p>
                     <div className="relative overflow-hidden">
                         <div className="flex animate-marquee">
                             {[...skills].map((skill, idx) => (
@@ -200,7 +204,7 @@ export const Hero = () => {
                     href="#about"
                     className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
-                    <span className="text-xs uppercase tracking-wider">Scroll</span>
+                    <span className="text-xs uppercase tracking-wider">{t("hero.scroll")}</span>
                     <ChevronDown className="w-6 h-6 animate-bounce" />
                 </a>
             </div>

@@ -8,12 +8,20 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
-  "hero": {
-    "greeting": "Hello, I'm",
-    "role": "Full Stack Web Developer",
-    "description": "I design and develop modern, high-performance, and scalable web applications.",
-    "viewProjects": "View my projects",
-    "contactMe": "Contact me"
+    "hero": {
+    "badge": "Full-Stack Developer | Java & JavaScript",
+    "headline1": "I create",
+    "headlineHighlight": "digital",
+    "headline2": "experiences with",
+    "headline3": "precision.",
+    "description": "Hi, I'm Alain Zinho, a full-stack Java/JavaScript developer. I design and build modern, high-performance, and scalable web applications.",
+    "contactMe": "Contact Me",
+    "downloadCV": "Download My CV",
+    "followMe": "Follow me:",
+    "availability": "Available for new opportunities",
+    "experience": "years of experience",
+    "technologies": "Technologies I Work With",
+    "scroll": "Scroll"
   }
 }
 

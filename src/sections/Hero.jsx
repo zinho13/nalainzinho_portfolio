@@ -33,6 +33,14 @@ export const Hero = () => {
     const currentLanguage = i18n.resolvedLanguage || i18n.language;
     const isFrench = currentLanguage.startsWith("fr");
 
+    const cvUrl = currentLanguage.startsWith("fr")
+        ? "/cv/cv-alain-zinho-fr.pdf"
+        : "/cv/cv-alain-zinho-en.pdf";
+
+    const cvFileName = currentLanguage.startsWith("fr")
+        ? "CV-Alain-Zinho-FR.pdf"
+        : "CV-Alain-Zinho-EN.pdf";
+
     return (
         <section
             className="relative min-h-screen flex items-center"
@@ -98,7 +106,10 @@ export const Hero = () => {
                                 {t("hero.contactMe")} <ArrowRight className="w-5 h-5" />
                             </Button>
                             {/* Animated SVG Border */}
-                            <AnimatedBorderButton>
+                            <AnimatedBorderButton
+                                href={cvUrl}
+                                download={cvFileName}
+                            >
                                 <Download className="w-5 h-5" /> 
                                 {t("hero.downloadCV")}
                             </AnimatedBorderButton>

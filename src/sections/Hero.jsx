@@ -27,8 +27,11 @@ const skills = [
 ];
 
 export const Hero = () => {
-    const { t } = useTranslation();
+    const { t, i18n} = useTranslation();
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+    const currentLanguage = i18n.resolvedLanguage || i18n.language;
+    const isFrench = currentLanguage.startsWith("fr");
 
     return (
         <section
@@ -91,7 +94,7 @@ export const Hero = () => {
 
                         {/* CTAs */}
                         <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-                            <Button size="lg">
+                            <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
                                 {t("hero.contactMe")} <ArrowRight className="w-5 h-5" />
                             </Button>
                             {/* Animated SVG Border */}
@@ -147,34 +150,121 @@ export const Hero = () => {
 
                     {/* Right Column - Profile Image */}
                     <div className="relative animate-fade-in animation-delay-300">
-                        {/* Profile Image */}
-                        <div className="relative max-w-md max-auto">
-                            <div 
-                                className="absolute inset-0 rounded-3xl bg-gradient-to-br 
-                                    from-primary/30 via-transparent to-primary/10 blur-2xl 
-                                    animate-pulse" 
-                            />
-                            <div className="relative glass rounded-3xl p-2 glow-border">
-                                <img 
-                                    src="/profile.jpeg" 
-                                    alt="Alain Zinho"
-                                    className="w-full aspect-[4/5] object-cover rounded-2xl"
-                                />
+                        <div className="relative w-full max-w-md mx-auto">
 
-                                {/* Floating Badge */}
-                                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                                        <span className="text-sm font-medium">{t("hero.availability")}</span>
+                            {isFrench ? (
+                                /* FR: Original rectangular design */
+                                <>
+                                    {/* Glow effect */}
+                                    <div
+                                        className="absolute inset-0 rounded-3xl bg-gradient-to-br
+                                                from-primary/30 via-transparent to-primary/10
+                                                blur-2xl animate-pulse"
+                                    />
+
+                                    {/* Rectangular profile image */}
+                                    <div className="relative glass rounded-3xl p-2 glow-border">
+                                        <img
+                                            src="/profile.jpeg"
+                                            alt="Alain Zinho"
+                                            className="w-full aspect-[4/4.5] object-cover rounded-2xl"
+                                        />
+
+                                        {/* Availability badge */}
+                                        <div className="absolute -bottom-4 -right-4 glass
+                                                        rounded-xl px-4 py-3 animate-float">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-3 h-3 bg-green-500 rounded-full
+                                                                animate-pulse" />
+                                                <span className="text-sm font-medium">
+                                                    {t("hero.availability")}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        {/* Experience badge */}
+                                        <div className="absolute -top-4 -left-4
+                                                        rounded-xl px-4 py-3 animate-float
+                                                        animation-delay-500">
+                                            <div className="text-2xl font-bold text-primary">
+                                                5+
+                                            </div>
+                                            <div className="text-xs text-muted-foreground">
+                                                {t("hero.experience")}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </>
+                            ) : (
+                                /* EN: Circular design */
+                                <>
+                                    {/* Glow effect */}
+                                    <div
+                                        className="absolute inset-8 rounded-full bg-gradient-to-br
+                                                from-primary/30 via-transparent to-primary/10
+                                                blur-3xl animate-pulse"
+                                    />
 
-                                {/* Stats Badge */}
-                                <div className="absolute -top-4 -left-4 rounded-xl px-4 py-3 animate-float animation-delay-500">
-                                    <div className="text-2xl font-bold text-primary">5+</div>
-                                    <div className="text-xs text-muted-foreground">{t("hero.experience")}</div>
-                                </div>
-                            </div>
+                                    {/* Circular profile image */}
+                                    <div className="relative aspect-square w-full max-w-[450px]
+                                                    mx-auto rounded-full overflow-hidden
+                                                    border border-primary/60
+                                                    shadow-[0_0_30px_rgba(32,178,166,0.25),0_0_70px_rgba(32,178,166,0.15)]
+                                                    portrait-glow">
+                                        <img
+                                            src="/profile.jpeg"
+                                            alt="Alain Zinho"
+                                            className="w-full h-full object-cover object-top"
+                                        />
+                                    </div>
+
+                                    {/* Experience badge */}
+                                    <div
+                                        className="absolute top-4 left-0 md:-left-6 z-20
+                                                glass rounded-2xl px-5 py-3
+                                                border border-primary/30
+                                                shadow-[0_0_20px_rgba(32,178,166,0.12)]
+                                                animate-float animation-delay-500"
+                                    >
+                                        <div className="text-3xl font-bold text-primary leading-none">
+                                            5+
+                                        </div>
+
+                                        <div className="text-xs text-muted-foreground mt-2 whitespace-nowrap">
+                                            {t("hero.experience")}
+                                        </div>
+                                    </div>
+
+                                    {/* Availability badge */}
+                                    <div
+                                        className="absolute bottom-4 right-0 md:-right-6 z-20
+                                                glass rounded-2xl px-5 py-4
+                                                border border-primary/30
+                                                shadow-[0_0_25px_rgba(32,178,166,0.15)]
+                                                animate-float max-w-[250px]"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <span
+                                                className="relative flex h-3 w-3 shrink-0"
+                                            >
+                                                <span
+                                                    className="absolute inline-flex h-full w-full
+                                                            rounded-full bg-green-400 opacity-75 animate-ping"
+                                                />
+                                                <span
+                                                    className="relative inline-flex h-3 w-3
+                                                            rounded-full bg-green-500"
+                                                />
+                                            </span>
+
+                                            <span className="text-sm font-medium leading-relaxed">
+                                                {t("hero.availability")}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </>
+                            )}
+
                         </div>
                     </div>
                 </div>
@@ -208,6 +298,11 @@ export const Hero = () => {
                     <ChevronDown className="w-6 h-6 animate-bounce" />
                 </a>
             </div>
+
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+            />
         </section>
     );
 }

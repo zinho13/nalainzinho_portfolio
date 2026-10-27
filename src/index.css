@@ -190,3 +190,13 @@
     0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 }
+
+/* Masquer la barre de défilement sans désactiver le scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

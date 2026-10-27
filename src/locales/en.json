@@ -4,7 +4,8 @@
     "about": "About",
     "projects": "Projects",
     "experience": "Experiences",
-    "contact": "Contact me",
+    "contact": "Contact",
+    "contactMe": "Contact me",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -22,6 +23,20 @@
     "experience": "years of experience",
     "technologies": "Technologies I Work With",
     "scroll": "Scroll"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "description": "Have a project or an opportunity? Send me a message.",
+    "name": "Full name",
+    "namePlaceholder": "Your name",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Message subject",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project or request...",
+    "send": "Send message",
+    "close": "Close dialog"
   }
 }
 

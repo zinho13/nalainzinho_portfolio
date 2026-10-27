@@ -4,7 +4,8 @@
     "about": "À propos",
     "projects": "Projets",
     "experience": "Expériences",
-    "contact": "Me contacter",
+    "contact": "Contact",
+    "contactMe": "Me contacter",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu"
   },
@@ -22,5 +23,19 @@
     "experience": "ans d'expérience",
     "technologies": "Technologies que j'utilise",
     "scroll": "Défiler"
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "description": "Vous avez un projet ou une opportunité ? Écrivez-moi.",
+    "name": "Nom complet",
+    "namePlaceholder": "Votre nom",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "vous@exemple.com",
+    "subject": "Sujet",
+    "subjectPlaceholder": "Objet de votre message",
+    "message": "Message",
+    "messagePlaceholder": "Décrivez votre projet ou votre demande...",
+    "send": "Envoyer le message",
+    "close": "Fermer la fenêtre"
   }
 }

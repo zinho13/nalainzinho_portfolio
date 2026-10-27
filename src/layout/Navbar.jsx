@@ -16,6 +16,7 @@ export const Navbar = () => {
         { href: "#about", label: t("nav.about") },
         { href: "#projects", label: t("nav.projects") },
         { href: "#experience", label: t("nav.experience") },
+        { href: "#contact", label: t("nav.contact") },
     ];
 
     const changeLanguage = (language) => {
@@ -97,9 +98,9 @@ export const Navbar = () => {
 
                     {languageSwitcher}
 
-                    <Button size="sm">
+                    {/* <Button size="sm">
                         {t("nav.contact")}
-                    </Button>
+                    </Button> */}
                 </div>
 
                 {/* Mobile controls */}
